@@ -1,0 +1,44 @@
+[project]
+name = "suraido"
+version = "0.1.0"
+description = "CLI tool to convert Beamer PDF presentations to PowerPoint (PPTX)"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "python-pptx>=0.6.21",
+    "natsort>=8.4.0",
+    "typer>=0.9.0",
+    "pdf2image>=1.16.0",
+    "tqdm>=4.66.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "mypy>=1.13.0",
+    "ruff>=0.8.0",
+    "pre-commit>=4.0.0",
+    "types-tqdm>=4.66.0",
+]
+
+[project.scripts]
+suraido = "main:app"
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "C4", "SIM"]
+ignore = [
+    "B008",
+] # Allow function calls in argument defaults (required by typer)
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
