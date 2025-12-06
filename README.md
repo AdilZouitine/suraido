@@ -10,6 +10,9 @@ A CLI tool to convert Beamer PDF presentations (or any PDF/PNG files) into Power
 
 I used this tool to convert my Beamer PDF presentations to PowerPoint for my thesis defense so I could put them in Google Slides and add notes.
 
+Why suraido? 
+It's the Japanese pronunciation of "slides".
+
 ## Features
 
 - **Single file or folder support** — Process individual files or entire folders
